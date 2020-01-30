@@ -1,0 +1,14 @@
+.griglia {
+  height: 360px;
+  width: 360px;
+}
+.quadrato {
+  background-color: rgb(128, 244, 132);
+  height: 60px;
+  width: 60px;
+  border: 1px solid black;
+}
+.fila {
+  display: flex;
+  flex-direction: row;
+}
