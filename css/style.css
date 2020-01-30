@@ -3,18 +3,22 @@
   width: 360px;
 }
 .quadrato {
-  background-color: rgb(128, 244, 132);
+  background-color: rgb(18, 248, 255);
   height: 60px;
   width: 60px;
   border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .fila {
   display: flex;
   flex-direction: row;
 }
 .yellow {
-  background-color: yellow;
+  background-color: rgb(237, 255, 91);
 }
 .green {
-  background-color: green;
+  background-color: rgb(128, 244, 132);
 }

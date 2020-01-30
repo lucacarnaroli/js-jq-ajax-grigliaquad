@@ -5,20 +5,22 @@
 $(document).ready(function(){
   $('.quadrato').click(
     function() {
+      var cliccato = $(this);
       $.ajax(
       {
         'url': "https://flynn.boolean.careers/exercises/api/random/int",
         'method': "GET",
-        'success': function (risposta) {
+        'success': function(risposta) {
           console.log(risposta);
-          $('.quadrato').text(risposta.response);
-          // if (risposta.response <= 5) {
-          //   var yellow = $('.quadrato').addClass('yellow');
-          // }else if (risposta.response > 5){
-          //   var green = $('.quadrato').addClass('green');
-          // }
+          cliccato.text(risposta.response);
+
+          if (risposta.response <= 5) {
+            var yellow = cliccato.addClass('yellow');
+          } else {
+            var green = cliccato.addClass('green');
+          }
         },
-        'error': function (richiesta, stato, errore) {
+        'error': function(richiesta, stato, errore) {
           alert("E' avvenuto un errore. " + errore);
         }
       }
