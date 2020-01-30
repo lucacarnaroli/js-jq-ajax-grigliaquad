@@ -16,7 +16,10 @@ $(document).ready(function(){
 
           if (risposta.response <= 5) {
             var yellow = cliccato.addClass('yellow');
-          } else {
+          } else if (risposta.response == 9) {
+            var green = cliccato.addClass('purple');
+            alert('HAI PERSO RIPROVA');
+          }else {
             var green = cliccato.addClass('green');
           }
         },
@@ -30,5 +33,5 @@ $(document).ready(function(){
 
 // creare quadrati con js
 for (var i = 0; i < 5;i++) {
-  
+
 }
