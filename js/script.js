@@ -18,7 +18,7 @@ $(document).ready(function(){
             var yellow = cliccato.addClass('yellow');
           } else if (risposta.response == 9) {
             var green = cliccato.addClass('purple');
-            alert('HAI PERSO RIPROVA');
+            $('.frase').show(1000);
           }else {
             var green = cliccato.addClass('green');
           }
@@ -32,6 +32,6 @@ $(document).ready(function(){
 });
 
 // creare quadrati con js
-for (var i = 0; i < 5;i++) {
-
-}
+// for (var i = 0; i < 5;i++) {
+//
+// }
