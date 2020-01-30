@@ -27,3 +27,8 @@ $(document).ready(function(){
     );
    });
 });
+
+// creare quadrati con js
+for (var i = 0; i < 5;i++) {
+  
+}
