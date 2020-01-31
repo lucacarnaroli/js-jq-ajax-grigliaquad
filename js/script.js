@@ -6,28 +6,31 @@ $(document).ready(function(){
   $('.quadrato').click(
     function() {
       var cliccato = $(this);
-      $.ajax(
-      {
-        'url': "https://flynn.boolean.careers/exercises/api/random/int",
-        'method': "GET",
-        'success': function(risposta) {
-          console.log(risposta);
-          cliccato.text(risposta.response);
+      if (!cliccato.hasClass('yellow') && !cliccato.hasClass('green') && !cliccato.hasClass('purple')) {
+        $.ajax(
+        {
+          'url': "https://flynn.boolean.careers/exercises/api/random/int",
+          'method': "GET",
+          'success': function(risposta) {
+            console.log(risposta);
+            cliccato.text(risposta.response);
 
-          if (risposta.response <= 5) {
-            var yellow = cliccato.addClass('yellow');
-          } else if (risposta.response == 9) {
-            var green = cliccato.addClass('purple');
-            $('.frase').show(1000);
-          }else {
-            var green = cliccato.addClass('green');
+            if (risposta.response <= 5) {
+              var yellow = cliccato.addClass('yellow');
+            } else if (risposta.response == 9) {
+              var green = cliccato.addClass('purple');
+              $('.frase').fadeIn(1000);
+            } else {
+              var green = cliccato.addClass('green');
+            }
+          },
+          'error': function(richiesta, stato, errore) {
+            alert("E' avvenuto un errore. " + errore);
           }
-        },
-        'error': function(richiesta, stato, errore) {
-          alert("E' avvenuto un errore. " + errore);
         }
+      );
+
       }
-    );
    });
 });
 
